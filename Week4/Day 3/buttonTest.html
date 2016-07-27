@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- <script src="jquery-2.2.3.js"></script> -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+
+
+	<button class="one">1</button>
+
+	<script type="text/javascript">
+	var calculation = [1];
+		
+		$(document).ready(function(){
+
+			$(".one").on("click", function(){
+				calculation.push(1);
+			});
+
+		})
+
+	console.log(calculation);		
+
+	</script>
+
+</body>
+</html>

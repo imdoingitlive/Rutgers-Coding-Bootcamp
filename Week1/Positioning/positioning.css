@@ -1,0 +1,25 @@
+body{
+	
+}
+
+div{
+	background: #eee;
+	height: 100px;
+}
+
+.fixed{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+#relativeDiv {
+		position: relative;
+		background: #eee;
+}
+
+#absoluteDiv{
+	position: absolute;
+	background: #999;
+	right: -10px;
+}

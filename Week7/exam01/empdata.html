@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Data Management</title>
+</head>
+
+	<!-- Bootstrap - Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	
+	<script  type="text/javascript" src="assets/javascript/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+
+<body>
+
+	<div class="jumbotron">
+		<h1>Employee Data Management</h1>
+	 	<h2>A Comprehensive Directory of Employee Billable Hours</h2>
+	 	<p></p>
+	</div>
+
+
+	
+	<div class="panel panel-default">
+ 		<div class="panel-heading">
+ 		  <h3 class="panel-title">Current Employees</h3>
+ 		</div>
+		<div class="panel-body">
+
+		<!-- Table -->
+ 		<table class="table">
+ 			<th> Employee Name</th>
+ 			<th> Role</th>
+ 			<th> Start Date</th>
+ 			<th> Months Worked</th>
+ 			<th> Monthly Rate ($)</th>
+ 			<th> Total Billed ($)</th>
+ 		</table>
+   		
+ 		</div>
+
+		<div class="panel-heading">
+ 		  <h3 class="panel-title">Add Employee</h3>
+ 		</div>
+
+		<div class="panel-body">
+
+	 		<form>
+				 <div class="form-group">
+				   <label for="exampleInputEmail1">Employee Name</label>
+				   <input type="email" class="form-control" id="name" >
+				 </div>
+
+				 <div class="form-group">
+				   <label for="exampleInputEmail1">Role</label>
+				   <input type="email" class="form-control" id="role" >
+				 </div>
+				 
+				 <div class="form-group">
+				   <label for="exampleInputPassword1">Start Data (DD/MM/YY - ex:06/11/2016</label>
+				   <input type="password" class="form-control" id="date" >
+				 </div>
+
+				 <div class="form-group">
+				   <label for="exampleInputPassword1">rate</label>
+				   <input type="password" class="form-control" id="rate" >
+				 </div>
+				 
+				 
+				 
+				 <button type="submit" id="submitBtn" class="btn btn-default">Submit</button>
+			</form>
+
+		</div>
+		
+
+
+	</div>
+
+
+
+	<script>
+	$( document ).ready(function() {
+		var dataRef = new Firebase("https://employeedatav02.firebaseio.com/");
+	
+
+ $("#submitBtn").on("click", function(){
+
+       // Get inputs
+       name = $('#name').val().trim(); 
+       role = $('#role').val().trim(); 
+       date = $('#date').val().trim();
+       rate = $('#rate').val().trim();
+
+       // Change what is saved in firebase
+       dataRef.push({
+           name: name,
+           rate: rate, 
+           role: role, 
+           date: date
+
+           
+       });
+
+       return false;
+   })
+		
+			
+
+
+
+	</script>
+
+	}
+
+
+</body>
+</html>
