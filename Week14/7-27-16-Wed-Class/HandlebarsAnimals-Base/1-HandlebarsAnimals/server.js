@@ -18,6 +18,7 @@ app.get('/dog', function(req,res) {
   //lucky for us, animals[0] is an object!
 
   //1. send the dog object from the animals array to the dog handlebars file.
+  res.render('dog', animals[0]);
 
 });
 
@@ -25,14 +26,18 @@ app.get('/all-pets', function(req,res) {
   //handlebars requires an object to be sent to the index handlebars file
 
   //2. send the animals to the index handlebars file. Remember that animals is an array and not an object.
-
+  for (var i = 0; i < animals.length; i++){
+    res.render('index', animals[i]);
+  }
 });
 
 app.get('/all-non-pets', function(req,res) {
   //handlebars requires an object to be sent to the index handlebars file.
 
   //3. send all the animals that are not pets to the index handlebars file.
-
+  for (var i = 2; i < animals.length; i++){
+    res.render('index', animals[i]);
+  }
 });
 
 var port = 3000;
