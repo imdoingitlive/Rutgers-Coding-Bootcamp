@@ -16,7 +16,7 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : '',
+  password : 't3st3r',
   database : 'event_saver_db'
 });
 
