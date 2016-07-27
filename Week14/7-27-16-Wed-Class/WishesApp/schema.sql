@@ -1,0 +1,9 @@
+CREATE DATABASE wishes_db;
+
+USE wishes_db;
+
+CREATE TABLE wishes(
+  id INT AUTO_INCREMENT NOT NULL,
+  wish VARCHAR(255),
+  PRIMARY KEY (id)
+)
