@@ -17,7 +17,7 @@ var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 't3st3r',
-  database : 'event_saver_db'
+  database : 'wishes_db'
 });
 
 connection.connect(function(err) {
@@ -29,3 +29,40 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 
 })
+
+app.get('/', function(req,res) {
+
+    connection.query('SELECT * FROM wishes;', function(err, data) {
+      if (err) throw err;
+
+      //test it
+      //console.log('The solution is: ', data);
+
+      //test it
+      //res.send(data);
+
+      res.render('index', {wishes : data});
+    });
+});
+
+//post route -> back to home
+app.post('/create', function(req, res) {
+
+    //test it
+    //console.log('You sent, ' + req.body.event);
+
+    //test it
+    //res.send('You sent, ' + req.body.event)
+
+    connection.query('INSERT INTO wishes (wish) VALUES (?)', [req.body.event], function(err, result) {
+      if (err) throw err;
+
+      res.redirect('/');
+    });
+
+
+});
+
+
+var port = 3000;
+app.listen(port);
