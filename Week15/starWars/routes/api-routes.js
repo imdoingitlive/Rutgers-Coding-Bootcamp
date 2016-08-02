@@ -4,6 +4,11 @@
 
 // Dependencies
 // =============================================================
+
+// TODO:
+// =====
+// Replace this dependency with one to your model directory
+// to link your Character model. (hint: we slacked the line out earlier).
 var orm 			= require ("../config/orm.js");
 
 
@@ -17,8 +22,13 @@ module.exports = function(app){
 		// If the user provides a specific character in the URL...
 		if(req.params.characters){
 
-			// Then display the JSON for ONLY that character.
-			// (Note how we're using the ORM here to run our searches)
+			// TODO:
+			// =====
+			// Replace this ORM call with the sequelize alternative.
+			// Check the Sequelize docs for the model method that finds one character
+			// and figure out where the "where" option would go.
+			// Connect that method with this callback: .then(function(result){}).
+			// In the curly braces, send the result to the front-end as json
 			orm.searchCharacter(req.params.characters,function(data){
 				res.json(data);
 			})
@@ -26,12 +36,14 @@ module.exports = function(app){
 
 		// Otherwise...
 		else{
-			// Otherwise display the data for all of the characters. 
-			// (Note how we're using the ORM here to run our searches)
-			var data =  orm.allCharacters(function(data){
-				res.json(data); });
-			};
-
+			
+			// NOTE: This one has been done for you already. 
+			// Use this as a hint for the earlier query.
+			Character.findAll({})
+				.then(function(result){
+					return res.json(result);
+			})
+		};
 	});
 
 	// If a user sends data to add a new character...
@@ -40,7 +52,12 @@ module.exports = function(app){
 		// Take the request...
 		var character = req.body;
 
-		// Then send it to the ORM to "save" into the DB.
+		// TODO:
+		// =====
+		// use the model method that will let you 
+		// post this data to the Character table. 
+		// Connect that method with this callback: .then(function(result){}).
+		// In the curly braces, send the result to the front-end as json
 		orm.addCharacter(character, function(data){
 		});
 
