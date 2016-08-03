@@ -22,8 +22,8 @@
 // =============================================================
 var express 	= require('express');
 var bodyParser 	= require('body-parser');
-
-
+var Character = require('./models')['Character'];
+Character.sync();
 
 
 // Sets up the Express App
