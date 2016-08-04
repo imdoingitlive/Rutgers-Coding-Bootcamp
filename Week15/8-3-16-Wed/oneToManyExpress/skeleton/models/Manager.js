@@ -2,12 +2,15 @@
 // -/-/-/-/-/-/-
 
 /* IMPORTANT
+ * This model will look a bit different from last class.
  *
  * With associations, we need to put a little more elbow greece into our models. 
  *
  * Basically, this model gets imported into models/index.js, 
  * where it can be associated with our other model(s).
  *
+ * The only alternative is one huge file with all of our models defined.
+ * That would be hella gross (and certainly not very elegant). 
  * -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ */
 
 
@@ -32,14 +35,15 @@ module.exports = function(sequelize, DataTypes){
 		}
 	}, {
 		classMethods: {
-			// OUR hasOne() RELATION
-			// ======================
+			// OUR hasMany Relationship
+			// ========================
 			// associate gets called within index.js,
-			// and mergers this model with models.store and models.uniform
+			// and mergers this model with other models
       associate: function(models) {
-      	// TODO: use the hasOne method to join Manager with the Store and uniform
-      		Manager.hasOne(models.Uniform);
-      		Manager.hasOne(models.Store);
+      	Manager.hasOne(models.Uniform);
+      	Manager.hasOne(models.Store);
+      	// TODO: add a hasMany relation
+      	Manager.hasMany(models.Employee);
       }
     }
   })
