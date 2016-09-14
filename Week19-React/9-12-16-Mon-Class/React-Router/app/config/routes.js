@@ -18,11 +18,13 @@ module.exports = (
     <Route path='Child1' component={Child1}>
       <Route path='GrandChild1' component={GrandChild1} />
       <Route path='GrandChild2' component={GrandChild2} />
+
+      <IndexRoute compoenent={GrandChild1} />
     </Route>
     
     <Route path='Child2' component={Child2} />
 
-    <IndexRoute component={Info} />
+    <IndexRoute component={Child1} />
 
   </Route>
 
