@@ -1,0 +1,30 @@
+/* 
+	Box styles from _boxes.scss
+*/
+.main-container {
+  width: 700px;
+  margin: 0 auto;
+  clear: both; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+/* 
+	Multi-line comments are preserved 
+*/
+.box-one, .box-two {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  height: 300px;
+  width: 300px; }
+
+.box-one {
+  border: 1px solid red; }
+
+.box-two {
+  border: 1px solid blue; }

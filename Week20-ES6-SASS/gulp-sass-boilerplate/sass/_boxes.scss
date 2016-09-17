@@ -1,0 +1,30 @@
+
+// Single line comments are removed in the final output
+/* 
+	Multi-line comments are preserved 
+*/
+
+// This is a mixin for use just like a 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// This is a template that can be reused for multiple boxes
+%box-generic-template {
+	@include border-radius(10px);
+	height: 300px;
+	width: 300px;
+}
+
+.box-one {
+	@extend %box-generic-template;
+	border: 1px solid red;
+
+}
+.box-two {
+	@extend %box-generic-template;
+	border: 1px solid blue;
+}
