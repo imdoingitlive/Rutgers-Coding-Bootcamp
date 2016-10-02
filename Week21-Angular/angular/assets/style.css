@@ -1,0 +1,16 @@
+body {
+    padding: 20px;
+}
+
+.bargain-before {
+    content: 'SALE- ';
+}
+
+.bargain {
+    color: red;
+}
+
+input {
+    display: block;
+    margin: 10px 0;
+}
