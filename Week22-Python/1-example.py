@@ -37,16 +37,16 @@ phoneNumber = input('Please enter the student\'s phone number: ')
 # Once you've gotten all of that, print it all back to the screen. 
 ###############################################################################
 #...Your Code Here...
-print('=====================================')
+print('=' * 20)
 print(firstName)
 print(lastName)
 print(middleInitial)
 print(address)
 print(phoneNumber)
-print('=====================================')
+print('=' * 20)
 # Then, use the same function you used to prompt users for information to ask 
 # them to confirm whether or not the information is correct. Save their 
 # response, but don't worry about doing anything with it yet!
 ###############################################################################
 # ...Your Code Here...
-confirmation = input('Please review the information above. If correct enter "y" otherwise press any other key...')
+confirmation = input('Is this information correct? (Y/n)')
