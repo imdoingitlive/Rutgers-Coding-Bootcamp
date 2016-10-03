@@ -58,14 +58,14 @@ student_profile = {
 ###############################################################################
 
 # Prompt user for student's identification information...
-first_name = input('Please enter the student\'s first name. ')
-last_name = input('Please enter the student\'s last name. ')
-middle_initial = input('Please enter the student\'s middle initial. ')
+student_profile['first_name'] = input('Please enter the student\'s first name. ')
+student_profile['last_name'] = input('Please enter the student\'s last name. ')
+student_profile['middle_initial'] = input('Please enter the student\'s middle initial. ')
 
 # Prompt user for student's contact information...
-address = input('Please enter the student\'s address. ')
-email = input('Please enter the student\'s email. ')
-phone_number = input('Please enter the student\'s phone_number. ')
+student_profile['address'] = input('Please enter the student\'s address. ')
+student_profile['email'] = input('Please enter the student\'s email. ')
+student_profile['phone_number'] = input('Please enter the student\'s phone_number. ')
 
 # Print a separator...
 print('-' * 18)
