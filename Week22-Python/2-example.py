@@ -34,7 +34,12 @@
 ###############################################################################
 
 # To start, wrap your code in an infinite loop. What does this look like?
-#
+while True:
+  stop = input('Would you like to enter student information? (Y/n) ')
+  if stop == 'Y':
+    break
+  else:
+    continue
 ###############################################################################
 
 # Next, create a dict, whose keys are the same as the variable names you've
@@ -42,7 +47,14 @@
 # JavaScript's null. Refactor your calls to input such that they assign to
 # the dictionary's values directly, rather than to variable names. It'll
 # look very similar!
-# 
+student_profile = {
+  'first_name' = None,
+  'last_name' = None,
+  'middle_initial' = None,
+  'address' = None,
+  'email' = None,
+  'phone_number' = None
+}
 ###############################################################################
 
 # Prompt user for student's identification information...
