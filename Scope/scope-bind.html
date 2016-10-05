@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scope and bind</title>
+</head>
+<body>
+
+<script>
+//----------------------------------------------------	
+	var scope = this;
+	var name = "outerScope";
+//----------------------------------------------------	
+
+	console.log(scope + "|" + name);
+
+	var object = {
+	  log : function() {
+	    console.log(this.scope + "|" + this.name);
+	  }
+	};
+
+	object.log();
+/*
+	var valuePair1 = {
+		scope: this,
+		name: "objectOne"
+	}
+
+	var valuePair2 = {
+		scope: scope,
+		name: "objectTwo"
+	}
+
+
+	var renderGlobal = object.log.bind(this);
+	var renderObject1 = object.log.bind(valuePair1);	
+	var renderObject2 = object.log.bind(valuePair2);
+
+
+	setTimeout( function() {
+		renderGlobal();
+	}, 1000);
+
+	setTimeout( function() {
+		renderObject1();
+	}, 2000);
+
+	setTimeout( function() {
+	  	renderObject2();
+	}, 3000);
+*/
+
+</script>
+
+</body>
+</html>
